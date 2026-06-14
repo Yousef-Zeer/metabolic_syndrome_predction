@@ -43,4 +43,24 @@ For this dataset, there were 2401 rows and 15 columns.
 *As waist circumference grows, so does the risk - climbing from 2.8% below 80 cm to 73% above 120 cm. A waist size over 100 cm is where risk begins to escalate sharply.*
 
 
+## Data preparation
 
+- Imputed WaistCirc & BMI using a custom GroupedMedianImputer (median per Sex, Race group).  
+- Imputed Income using global median; Marital using a constant value ("Missing").  
+- Applied OrdinalEncoder to Albuminuria and OneHotEncoder to Sex, Race, and Marital.  
+- Scaled all numerical features using RobustScaler to handle significant outliers. 
+
+## Modeling
+
+### Feature Engineering
+
+- TG_HDL_Ratio — TG to HDL ratio, a strong insulin resistance indicator.
+- Metabolic_Risk_Score — a composite score (0–6) based on clinical thresholds for blood glucose, triglycerides, HDL, and waist circumference (sex-adjusted).
+
+### Feature Selection
+- Applied RFECV to identify the most predictive features.
+
+### Model
+
+- Trained a voting ensemble (XGBoost + Random Forest) with threshold tuning.
+- Achieved 88% accuracy and 90% recall on the target class (Metabolic Syndrome)
