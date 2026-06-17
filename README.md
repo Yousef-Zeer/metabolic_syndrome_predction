@@ -1,5 +1,12 @@
 # Metabolic Syndrome Prediction
 
+## Demo
+
+🔗 Try it: [MetSync App](https://metabolic-screener.streamlit.app/)
+
+&nbsp;
+
+<img width="853" height="480" alt="Metabolic+Syndrome+2" src="https://github.com/user-attachments/assets/49426f07-f4a3-4a07-aa1a-098d179d5aff" />
 
 ## Problem Statement
 Metabolic Syndrome affects nearly 28% of adults worldwide, yet remains one of the most underdiagnosed conditions. This project uses machine learning to identify individuals likely to have Metabolic Syndrome from clinical and socioeconomic data,supporting faster and more informed clinical decision-making
