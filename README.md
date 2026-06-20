@@ -76,7 +76,15 @@ For this dataset, there were 2401 rows and 15 columns.
 | Random Forest (Manual Feature Engineering) | 0.88 | 0.84 |
 | Soft Voting Ensemble (Random Forest + XGBoost) | **0.89** | **0.87** |
 
-- Trained a voting ensemble (XGBoost + Random Forest) with threshold tuning.
+- Trained a voting ensemble (XGBoost + Random Forest) with threshold tuning 
 - Achieved 88% accuracy and 90% recall on the target class (Metabolic Syndrome)
 
 
+## Limitations
+
+Blood pressure data was not available in this dataset. Since elevated blood pressure (≥130/85 mmHg) is one of the five NCEP ATP III diagnostic criteria, incorporating it could strengthen the model's ability to capture cases that rely on this criterion for diagnosis.
+
+## Future Work 
+
+- Validate on an external dataset. The model was trained and tested entirely on NHANES data, so it's worth testing it on a dataset from a different population to see how well it actually generalizes
+- Incorporate lifestyle features. Smoking, physical activity, and diet are known Metabolic Syndrome risk factors but weren't available in this dataset , adding them could meaningfully improve the model's predictive power.
