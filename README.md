@@ -55,9 +55,8 @@ For this dataset, there were 2401 rows and 15 columns.
 - Imputed WaistCirc & BMI using a custom GroupedMedianImputer (median per Sex, Race group).  
 - Imputed Income using global median; Marital using a constant value ("Missing").  
 - Applied OrdinalEncoder to Albuminuria and OneHotEncoder to Sex, Race, and Marital.  
-- Scaled all numerical features using RobustScaler to handle significant outliers. 
+- Scaled all numerical features using RobustScaler to handle significant outliers.
 
-## Modeling
 
 ### Feature Engineering
 
@@ -67,7 +66,17 @@ For this dataset, there were 2401 rows and 15 columns.
 ### Feature Selection
 - Applied RFECV to identify the most predictive features.
 
-### Model
+## Modeling
+
+### Model Comparison
+
+| Model | Accuracy | MetSyn Recall |
+|--------|----------|---------------|
+| Baseline | 0.87 | 0.81 |
+| Random Forest (Manual Feature Engineering) | 0.88 | 0.84 |
+| Soft Voting Ensemble (Random Forest + XGBoost) | **0.89** | **0.87** |
 
 - Trained a voting ensemble (XGBoost + Random Forest) with threshold tuning.
 - Achieved 88% accuracy and 90% recall on the target class (Metabolic Syndrome)
+
+
